@@ -14,7 +14,7 @@
 
     const handleLinkClick = (paper) => {
     // Step 1: Log the click
-    fetch("http://localhost:5001/log-click", {
+    fetch("https://ai-reasearchpaperfinder-311709302102.us-central1.run.app/log-click", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -26,7 +26,7 @@
         console.log("Click logged:", data);
   
         // Step 2: Now tell Flask to update the PDF and reload the model
-        return fetch("http://localhost:5001/update-pdf", {
+        return fetch("https://ai-reasearchpaperfinder-311709302102.us-central1.run.app/update-pdf", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -39,7 +39,7 @@
         console.log("PDF/model update response:", data);
           
         // Step 3: Redirect to the PDF viewer
-          window.location.href = "http://localhost:5001/";
+          window.location.href = "https://ai-reasearchpaperfinder-311709302102.us-central1.run.app";
         })
         .catch((error) => {
         console.error("Error during click or PDF update:", error);
